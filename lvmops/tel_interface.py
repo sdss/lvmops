@@ -10,9 +10,8 @@ class __control__(object):
             self.__ra__ = 0.0
             self.__dec__ = 0.0
             self.__focus__ = 0.0
-            return(0)
 
-        def getdec(self):
+        def getra(self):
             err_code = 0
             return(self.__ra__,err_code)
 
@@ -25,7 +24,7 @@ class __control__(object):
             return(self.__focus__,err_code)
 
 
-        def GoTo(self, ra, dec, fiber=0, deg=True, speed=10):
+        def GoTo(self, ra, dec, fiber=0, PA=0, deg=True, speed=10):
             err_code = 0
             fiber_offset_ra = 0 * fiber
             fiber_offset_dec = 0 * fiber
@@ -47,6 +46,10 @@ class __control__(object):
             optimal_focus_found, err_code = (0.0, 0)
             return((optimal_focus_found, err_code))
 
+        def aquire(self, ra,dec,**kwargs):
+            pass
+
+
 #LVMI
 ######
 #LVMOps
@@ -56,20 +59,21 @@ class telescope(object):
         self.name = name
         self.control = __control__(address=address)
         self.N_fibers = N_fibers
-        self.ra = self.control.getra
-        self.dec = self.control.getdec
-        self.focus = self.control.focus
-        self.control = __control__()
-        self.GoTo = self.control.GoTo
+        self.ra = self.control.getra()[0]
+        self.dec = self.control.getdec()[0]
 
-        
-    def GoTo(self, ra, dec, fiber=0, deg=True,out_TextBrowser=None,speed=10):
+        self.getra = self.control.getra
+        self.getdec = self.control.getdec
+        self.focus = self.control.getfocus
+
+    def GoTo(self, ra, dec, fiber=0, PA=0, deg=True,speed=10):
         # out_TextBrowswer should be an async text stream on a port, which the text_browser is constantly reading. But that is
         # Probably already implemented, so I'm keeping this simple. Also, these are dummy functions...
-        out_TextBrowser.append("Moving %s from %0.6f:%0.6f to %0.6f:%0.6f ... "%(self.name, self.ra,self.dec,ra,dec))        
-        if self.__async_move__(ra,dec) == 0:
-            out_TextBrowser.append("GoTo Complete")
-        return(0)
+        result = self.control.GoTo(ra,dec, fiber=fiber, PA=PA)
+        if result[1] == 0:
+            return(0)
+        else:
+            return(1)
 
     def autofocus(self):
         self.control.findfocus()

@@ -23,10 +23,10 @@ class __control__(object):
 
     def expose(self, **kwargs):
         err_code = 0
-        return((),err_code)    
+        return((),err_code)
 
 class __sensors__(object):
-    def __init__(self, dome_open):
+    def __init__(self):
         self.error_codes = {0:"PASS", 1:"FAIL",-1:"FAULT"}
         self.__t0__ = -50.0
         self.__h0__ = 50.0
@@ -50,7 +50,7 @@ class __sensors__(object):
 # Begin LVM-OPS functions
 
 class spec(object):
-    def __init__(self, name="spec1"):
+    def __init__(self, name="spec"):
         self.name = name
         self.control = __control__()
         self.sensors = __sensors__()
