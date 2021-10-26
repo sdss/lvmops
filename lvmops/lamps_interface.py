@@ -1,60 +1,32 @@
-import time
 def flat(object):
     def __init__(self):
-        self.__power__ = 1
-        self.timeon = False
+        pass
 
     def power(self):
-        err_code = 0
-        # check "power"
-        return((self.__power__,err_code))
+        pass
 
     def on(self):
-        err_code = 0
-        self.__power__ = 0
-        self.timeon = time.time()
-        return((),err_code)
+        pass
 
     def off(self):
-        err_code = 0
-        self.__power__ = 0
-        self.timeon = False
-        return((),err_code)
+        pass
 
     def time_on(self):
-        if self.power() == 0:
-            time_on = time.time() - self.timeon()
-        else:
-            time_on = False
-        return(time_on)
+        pass
 
 
 def arc(object):
     def __init__(self):
-        self.__power__ = 1
-        self.timeon = False
-
+        pass
 
     def power(self):
-        err_code = 0
-        # check "power"
-        return((self.__power__,err_code))
+        pass
 
     def on(self):
-        err_code = 0
-        self.__power__ = 0
-        self.timeon = time.time()
-        return((),err_code)
+        pass
 
     def off(self):
-        err_code = 0
-        self.__power__ = 0
-        self.timeon = False
-        return((),err_code)
+        pass
 
     def time_on(self):
-        if self.power() == 0:
-            time_on = time.time() - self.timeon()
-        else:
-            time_on = False
-        return(time_on)
+        pass
