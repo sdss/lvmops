@@ -17,7 +17,7 @@ class lvmi(object):
       '''
       pass
     
-    def aquire_obs(self, obs=None, guide=True, offsetcal=True, verify=False)"
+    def aquire_obs(self, obs=None, guide=True, offsetcal=True, verify=False):
       '''
       Do fine aquisition for an observation by locking in science and sky telescope guidestars and 1st calibration star.
       
