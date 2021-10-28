@@ -1,20 +1,17 @@
 
 
-class sensors(object):
+class enclosure(object):
     def __init__(self):
         pass
     
-    def t1(self):
+    def open(self):
         pass
 
-    def t2(self):
-        pass
-
-    def h0(self):
-        pass
-
-    def dome_open_status(self):
+    def close(self):
         pass
 
     def status(self):
-        return (t1(), t2(), h0(), dome_open_status())
+    '''
+    Return readout of all sensors and dome position.
+    '''
+        pass
