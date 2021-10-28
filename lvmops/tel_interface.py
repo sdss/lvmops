@@ -75,3 +75,9 @@ class telescope(object):
     def track_off(self):
         pass
         
+
+    def zero_coordinates(self):
+    '''
+    Zero-out mount model once pointing is verified.
+    '''
+        pass
