@@ -1,5 +1,8 @@
-def flat(object):
+def ldls(object):
     def __init__(self):
+    '''
+    Create object to control the LDLS continuum source
+    '''
         pass
 
     def power(self):
@@ -15,17 +18,22 @@ def flat(object):
         pass
 
     def time_on(self):
+    '''
+    return the time the lamp has been on
+    '''
         pass
 
 
-#
-# TODO: we want individual control of the lamps!
-#
-def arcs(object):
-    def __init__(self):
-        pass
+def penray(object):
+    def __init__(self, lamp):
+    '''
+    Create object to control an arc lamp.
 
-    def power(self):
+    Inputs:
+    lamp : str
+        the lamp this object will control, e.g. 'HgCd', 'Xe' 
+        from a predetermined list of available lamps.
+    '''
         pass
 
     def status(self):
@@ -38,4 +46,7 @@ def arcs(object):
         pass
 
     def time_on(self):
+    '''
+    return the time the lamp has been on
+    '''
         pass
