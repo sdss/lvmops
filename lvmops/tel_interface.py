@@ -74,7 +74,15 @@ class telescope(object):
 
     def track_off(self):
         pass
-        
+
+    def guide_on(self, guide_parameters=None):
+    '''
+    Turn on guiding, or modify parameters of running guide loop.
+    '''
+        pass
+
+    def guide_off(self):
+        pass
 
     def zero_coordinates(self):
     '''
