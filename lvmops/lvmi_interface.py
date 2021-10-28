@@ -5,6 +5,21 @@ class lvmi(object):
     def __init__(self, name="lvmi", address=None):
         pass
 
+    def startup(self):
+    '''
+    Setup the instrument at the beginning of operations.
+
+    Home all telescopes and motors. Set everything to a predetermined status.
+    Verify all hardware is responsive and in a defined state.
+    '''
+      pass
+
+    def shutdown(self):
+    '''
+    Park hardware for safe stowage at end of operations.
+    '''
+      pass
+
     def setup_obs(self, obs=None):
       '''
       Point all telescopes to start a fine acquisition for a science observation and home the calibration telescope shutter
