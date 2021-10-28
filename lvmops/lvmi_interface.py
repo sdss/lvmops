@@ -47,4 +47,18 @@ class lvmi(object):
       '''
       pass
       
-      
+    def bias_sequence(self, ...):
+      pass
+
+    def dark_sequence(self, ...):      
+      pass
+
+    def flat_sequence(self, ...):      
+      pass
+
+    def twi_sequence(self, ...):      
+      pass
+
+    def arc_sequence(self, ...):      
+      pass
+
