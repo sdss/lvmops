@@ -20,6 +20,12 @@ class lvmi(object):
     '''
       pass
 
+    def halt(self):
+    '''
+    E-Stop.
+    '''
+      pass
+
     def setup_obs(self, obs=None):
     '''
     Point all telescopes to start a fine acquisition for a science observation and home the calibration telescope shutter
