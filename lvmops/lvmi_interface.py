@@ -46,7 +46,13 @@ class lvmi(object):
       None
       '''
       pass
-      
+
+    def warmup_lamps(self, lamps=[]):
+    '''
+    warmup lamps in list, ...
+    '''
+      pass
+
     def bias_sequence(self, ...):
       pass
 
@@ -62,3 +68,5 @@ class lvmi(object):
     def arc_sequence(self, ...):      
       pass
 
+    def agc_flat_sequence(self, ...):
+      pass
