@@ -5,6 +5,9 @@ def flat(object):
     def power(self):
         pass
 
+    def status(self):
+        pass
+
     def on(self):
         pass
 
@@ -15,11 +18,17 @@ def flat(object):
         pass
 
 
-def arc(object):
+#
+# TODO: we want individual control of the lamps!
+#
+def arcs(object):
     def __init__(self):
         pass
 
     def power(self):
+        pass
+
+    def status(self):
         pass
 
     def on(self):
