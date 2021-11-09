@@ -7,7 +7,7 @@ class enclosure(object):
     def open(self):
     '''
     Ensure telescopes are parked before opening dome
-    Turn off all lamps
+    Turn off all lamps (calibration and dome lamps)
     '''
         pass
 
