@@ -22,3 +22,15 @@ class enclosure(object):
     Return readout of all sensors and dome position.
     '''
         pass
+
+    def dome_lights_on(self):
+    '''
+    Turn dome lights on
+    '''
+        pass
+
+    def dome_lights_off(self):
+    '''
+    Turn dome lights off
+    '''
+        pass
