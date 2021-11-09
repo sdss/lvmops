@@ -5,9 +5,16 @@ class enclosure(object):
         pass
     
     def open(self):
+    '''
+    Ensure telescopes are parked before opening dome
+    Turn off all lamps
+    '''
         pass
 
     def close(self):
+    '''
+    Ensure telescopes are parked before closing dome
+    '''
         pass
 
     def status(self):
