@@ -6,9 +6,15 @@ class spec(object):
         pass
 
     def dark(self, exptime=0.0, imtype="dark", Nexp=1):
+        """
+        Ensure all dome lights and calibration lamps are off.
+        """
         pass
 
     def bias(self, Nexp=1):
+        """
+        Ensure all dome lights and calibration lamps are off.
+        """
         pass
 
     def get_temperature(self, sensor=None):
