@@ -11,6 +11,7 @@ class lvmi(object):
 
     Home all telescopes and motors. Set everything to a predetermined status.
     Verify all hardware is responsive and in a defined state.
+    Verify all calibration lamps are off
     '''
       pass
 
@@ -62,6 +63,7 @@ class lvmi(object):
     def warmup_lamps(self, lamps=[]):
     '''
     warmup lamps in list, ...
+    Should we set a wait command to prevent the user moving onto the exposures while lamps are still warming up?
     '''
       pass
 
