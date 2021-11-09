@@ -68,19 +68,45 @@ class lvmi(object):
       pass
 
     def bias_sequence(self, ...):
+    '''
+    Execute bias sequence
+    Should prepare by turning off calibration lamps and dome lights
+    '''
       pass
 
     def dark_sequence(self, ...):      
+    '''
+    Execute dark sequence
+    Should prepare by turning off calibration lamps and dome lights
+    '''
       pass
 
     def flat_sequence(self, ...):      
+    '''
+    Execute screenflat sequence
+    Should prepare by turning off dome lights
+    check telescope is poited at screen
+    '''
       pass
 
     def twi_sequence(self, ...):      
+    '''
+    Execute twilight flat sequence
+    '''
       pass
 
     def arc_sequence(self, ...):      
+    '''
+    Execute arc sequence
+    Should prepare by turning off dome lights
+    check telescope is poited at screen
+    '''
       pass
 
     def agc_flat_sequence(self, ...):
+    '''
+    Execute AGC screen flat sequence
+    Should prepare by turning off dome lights
+    check telescope is poited at screen
+    '''
       pass
