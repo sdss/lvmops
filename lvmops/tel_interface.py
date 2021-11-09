@@ -78,6 +78,9 @@ class telescope(object):
     def guide_on(self, guide_parameters=None):
     '''
     Turn on guiding, or modify parameters of running guide loop.
+    EJ: Do we want to add as optional parameters the guider PA and specific fibres for specific stars? It might be 
+    useful if we plan to reobserve a field (in case of poor quality or a deep exposure) and want to match the pointing 
+    to the target as closely as possible
     '''
         pass
 
