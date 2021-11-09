@@ -12,6 +12,12 @@ def ldls(object):
         pass
 
     def on(self):
+    '''
+    should regularly run time_on command once lamps are on to ensure they haven't been left on for too long. 
+    Send error message to SDSS observer(?) if time_on exceeds a predetermined limit. This step will prevent 
+    lamps being left on during observations, extend the lifetime of lamps, and prevent overheating of lamps 
+    and surrounding components.
+    '''
         pass
 
     def off(self):
@@ -40,6 +46,12 @@ def penray(object):
         pass
 
     def on(self):
+    '''
+    should regularly run time_on command once lamps are on to ensure they haven't been left on for too long. 
+    Send error message to SDSS observer(?) if time_on exceeds a predetermined limit. This step will prevent 
+    lamps being left on during observations, extend the lifetime of lamps, and prevent overheating of lamps 
+    and surrounding components.
+    '''
         pass
 
     def off(self):
