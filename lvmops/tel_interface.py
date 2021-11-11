@@ -1,4 +1,7 @@
 
+'''
+All coordinates are in ICRS unless specified otherwise
+'''
 class telescope(object):
     def __init__(self, name="sci", address=None):
         pass
@@ -22,11 +25,19 @@ class telescope(object):
         pass
 
     # pointing offset: change track rates
-    def offset(self, target=None, delta_ra=None, delta_dec=None, delta_x=None, delta_y=None):
+    def offset(self, target=None, delta_ra=None, delta_dec=None, delta_x=None, delta_y=None, offset_gbox=False):
         pass
     
     # guiding offset: do NOT change track rates
     def guide_offset(self, target=None, delta_ra=None, delta_dec=None, delta_x=None, delta_y=None):
+        pass
+    
+    # change guider set points
+    def offset_gbox(self, delta_x=None, delta_y=None, delta_pa=None):
+    '''
+    move the guider set points by specified amount; used to move accurate
+    offsets by letting the guider do the work. used, e.g., for dithering.
+    '''
         pass
     
     def paoffset(self, delta_PA=None):
@@ -78,9 +89,8 @@ class telescope(object):
     def guide_on(self, guide_parameters=None):
     '''
     Turn on guiding, or modify parameters of running guide loop.
-    EJ: Do we want to add as optional parameters the guider PA and specific fibres for specific stars? It might be 
-    useful if we plan to reobserve a field (in case of poor quality or a deep exposure) and want to match the pointing 
-    to the target as closely as possible
+    guide_parameters is a dictionary containing additional parameters for 
+    the guiders, e.g. exposure times, cadence, PID parameters, readout or window modes, ...
     '''
         pass
 

@@ -15,15 +15,21 @@ class lvmi(object):
     '''
       pass
 
-    def shutdown(self):
+    def park(self):
     '''
     Park hardware for safe stowage at end of operations.
     '''
       pass
 
+    def shutdown(self):
+    '''
+    shutdown all critical equipment (in prep for storm, for example.)
+    '''
+      pass
+
     def halt(self):
     '''
-    E-Stop.
+    E-Stop. Stop all running tasks/commands/motors immediately
     '''
       pass
 

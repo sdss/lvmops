@@ -14,7 +14,7 @@ class agc(object):
     def power_off(self):
         pass
 
-    def expose(self, exptime=0.0, imtype=None, Nexp=1):
+    def expose(self, exptime=0.0, imtype=None, Nexp=1, save=True):
         pass
 
     def bias(self, Nexp=1):

@@ -7,15 +7,16 @@ class enclosure(object):
     def open(self):
     '''
     Ensure telescopes are parked before opening dome
-    Ensures the dome safety interlock is OK (i.e. no people on telescope platform)
-    Turn off all lamps (calibration and dome lamps)
+    Error out if the dome safety interlock are not OK (i.e. people on telescope platform)
+    Error out if any calibration lamps are on
+    Error out if dome lights are on
     '''
         pass
 
     def close(self):
     '''
     Ensure telescopes are parked before closing dome
-    Ensures the dome safety interlock is OK (i.e. no people on telescope platform)
+    Error out if dome safety interlock is not OK (i.e. people on telescope platform)
     '''
         pass
 
