@@ -8,7 +8,7 @@ class lvmi(object):
     def startup(self):
     '''
     Setup the instrument at the beginning of operations.
-
+    Ping all relevant servers and check connectivity (shceduller, data storage, weather, www, etc)
     Home all telescopes and motors. Set everything to a predetermined status.
     Verify all hardware is responsive and in a defined state.
     Verify all calibration lamps are off
