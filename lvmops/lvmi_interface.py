@@ -7,17 +7,24 @@ class lvmi(object):
 
     def startup(self):
     '''
-    Setup the instrument at the beginning of operations.
-    Ping all relevant servers and check connectivity (shceduller, data storage, weather, www, etc)
-    Home all telescopes and motors. Set everything to a predetermined status.
-    Verify all hardware is responsive and in a defined state.
-    Verify all calibration lamps are off
+    Setup the instrument for the beginning of operations.
+    
+    ======
+    Comments and desired actions:    
+    - Ping all relevant servers and check connectivity (scheduler, data storage, weather, www, etc)
+    - Home all telescopes and motors. Set everything to a predetermined status.
+    - Verify all hardware is responsive and in a defined state.
+    - Verify all calibration lamps are off
     '''
       pass
 
     def park(self):
     '''
     Park hardware for safe stowage at end of operations.
+    
+    ======
+    Comments and desired actions:    
+     - Error out if dome safety interlock is not OK (i.e. people on telescope platform)
     '''
       pass
 
@@ -42,6 +49,11 @@ class lvmi(object):
       
     Returns:
     None
+
+    ======
+    Comments and desired actions:    
+     - Error out if dome safety interlock is not OK (i.e. people on telescope platform)
+     - Error out if an exposure is already running (i.e. from previous observation)
     '''
       pass
     
@@ -69,50 +81,71 @@ class lvmi(object):
     def warmup_lamps(self, lamps=[]):
     '''
     warmup lamps in list, ...
-    Should we set a wait command to prevent the user moving onto the exposures while lamps are still warming up?
+
+    Parameters:
+    - Should we set a wait command to prevent the user moving onto the exposures while lamps are still warming up?
     '''
       pass
 
     def bias_sequence(self, ...):
     '''
     Execute bias sequence
-    Should prepare by turning off calibration lamps and dome lights
+
+    ======
+    Comments and desired actions:    
+    - Should prepare by turning off calibration lamps and dome lights
     '''
       pass
 
     def dark_sequence(self, ...):      
     '''
     Execute dark sequence
-    Should prepare by turning off calibration lamps and dome lights
+    ======
+    Comments and desired actions:    
+    - Should prepare by turning off calibration lamps and dome lights
     '''
       pass
 
     def flat_sequence(self, ...):      
     '''
     Execute screenflat sequence
-    Should prepare by turning off dome lights
-    check telescope is poited at screen
+
+    ======
+    Comments and desired actions:    
+    - Should prepare by turning off dome lights
+    - check telescope is pointed at screen
     '''
       pass
 
     def twi_sequence(self, ...):      
     '''
     Execute twilight flat sequence
+
+    ======
+    Comments and desired actions:    
+    - Should prepare by turning off dome lights
+    
     '''
       pass
 
     def arc_sequence(self, ...):      
     '''
     Execute arc sequence
-    Should prepare by turning off dome lights
-    check telescope is poited at screen
+
+    ======
+    Comments and desired actions:    
+    - Should prepare by turning off dome lights
+    - check telescope is pointed at screen
     '''
       pass
 
     def agc_flat_sequence(self, ...):
     '''
     Execute AGC screen flat sequence
-    Should prepare by turning off dome lights
-    check telescope is poited at screen
+
+    ======
+    Comments and desired actions:    
+    - Should prepare by turning off dome lights
+    - Check telescope is pointed at screen
     '''
       pass
