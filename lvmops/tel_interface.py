@@ -9,10 +9,21 @@ class telescope(object):
     def goto_park(self):
     '''
     Move telescope to safe park position.
+    
+    ======
+    Comments and desired actions:
+    - Error out if the dome safety interlock are not OK (i.e. people on telescope platform)
     '''
         pass
 
     def goto_zenith(self):
+    '''
+    Point telescope to zenith
+    
+    ======
+    Comments and desired actions:
+    - Error out if the dome safety interlock are not OK (i.e. people on telescope platform)
+    '''
         pass
 
     def goto_eq(self, ra, dec, PA=0, target='optical_axis', deg=True):
@@ -22,6 +33,13 @@ class telescope(object):
         pass
 
     def goto_screen(self): 
+    '''
+    Point telescope to screen for dome flats
+    
+    ======
+    Comments and desired actions:
+    - Error out if the dome safety interlock are not OK (i.e. people on telescope platform)
+    '''
         pass
 
     # pointing offset: change track rates
