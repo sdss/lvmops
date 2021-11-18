@@ -9,18 +9,29 @@ def ldls(object):
         pass
 
     def status(self):
+    '''
+    Return readout of all lamps
+    '''
         pass
 
     def on(self):
     '''
-    should regularly run time_on command once lamps are on to ensure they haven't been left on for too long. 
-    Send error message to SDSS observer(?) if time_on exceeds a predetermined limit. This step will prevent 
+    Turn ldls lamps on
+    
+    ======
+    Comments and desired actions:    
+    - should regularly run time_on command once lamps are on to ensure they haven't been left on for too long. 
+    - Send error message to SDSS observer(?) if time_on exceeds a predetermined limit. This step will prevent 
     lamps being left on during observations, extend the lifetime of lamps, and prevent overheating of lamps 
     and surrounding components.
+    - should we check if the dome is open when running this command? If open,error out or request confirmation to turn on lamps
     '''
         pass
 
     def off(self):
+    '''
+    Turn ldls lamps off
+    '''
         pass
 
     def time_on(self):
@@ -43,18 +54,29 @@ def penray(object):
         pass
 
     def status(self):
+    '''
+    Return readout of all lamps
+    '''
         pass
 
     def on(self):
     '''
-    should regularly run time_on command once lamps are on to ensure they haven't been left on for too long. 
-    Send error message to SDSS observer(?) if time_on exceeds a predetermined limit. This step will prevent 
+    Turn penrey lamps on
+    
+    ======
+    Comments and desired actions:    
+    - Should regularly run time_on command once lamps are on to ensure they haven't been left on for too long. 
+    - Send error message to SDSS observer(?) if time_on exceeds a predetermined limit. This step will prevent 
     lamps being left on during observations, extend the lifetime of lamps, and prevent overheating of lamps 
     and surrounding components.
+    - Should we check if the dome is open when running this command? If open, error out or request confirmation to turn on lamps
     '''
         pass
 
     def off(self):
+    '''
+    Turn penray lamps off
+    '''
         pass
 
     def time_on(self):
