@@ -149,3 +149,17 @@ class lvmi(object):
     - Check telescope is pointed at screen
     '''
       pass
+
+    
+    def status(self, ...):
+    '''
+    Check status of LVMI
+
+    ======
+    Comments and desired actions:    
+    - Return information on
+      - whether system has been started up or shut down
+      - whether hardware is parked or not
+      - exposure status (i.e. in process of acquisition, exposing, reading out, idle)
+    '''
+      pass
