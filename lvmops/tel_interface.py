@@ -12,7 +12,11 @@ class telescope(object):
     
     ======
     Comments and desired actions:
-    - Error out if the dome safety interlock are not OK (i.e. people on telescope platform)
+    - Check dome safety interlock:
+        - if interlock is engaged, do not move the telescope. Return error message (assume people are inside dome)
+    - run status (LVMI_interface) to check instrument status
+        - if not idle (i.e. carrying out any observations or calibrations), abort observation (halt in LVMI_interface) and park telescope 
+        (in this case, we assume user wants to park due to an emergency)
     '''
         pass
 
@@ -22,14 +26,40 @@ class telescope(object):
     
     ======
     Comments and desired actions:
-    - Error out if the dome safety interlock are not OK (i.e. people on telescope platform)
+    - Check dome safety interlock:
+        - if interlock is engaged, do not move the telescope. Return error message (assume people are inside dome)
+    - run status (LVMI_interface) to check instrument status
+        - if not idle (i.e. carrying out any observations or calibrations), repeat status command regularly until it returns idle, 
+          then move telescope. Regularly give updates (i.e. "waiting for instrument to become idle before moving telescope")
     '''
         pass
 
     def goto_eq(self, ra, dec, PA=0, target='optical_axis', deg=True):
+    '''
+    Point telescope to position using RA and dec
+    
+    ======
+    Comments and desired actions:
+    - Check dome safety interlock:
+        - if interlock is engaged, do not move the telescope. Return error message (assume people are inside dome)
+    - run status (LVMI_interface) to check instrument status
+        - if not idle (i.e. carrying out any observations or calibrations), repeat status command regularly until it returns idle, 
+          then move telescope. Regularly give updates (i.e. "waiting for instrument to become idle before moving telescope")
+    '''
         pass
 
     def goto_aa(self, alt, az, PA=0, target='optical_axis', deg=True):
+    '''
+    Point telescope to position using alt/az (i.e. point to screen or manually park)
+    
+    ======
+    Comments and desired actions:
+    - Check dome safety interlock:
+        - if interlock is engaged, do not move the telescope. Return error message (assume people are inside dome)
+    - run status (LVMI_interface) to check instrument status
+        - if not idle (i.e. carrying out any observations or calibrations), repeat status command regularly until it returns idle, 
+          then move telescope. Regularly give updates (i.e. "waiting for instrument to become idle before moving telescope")
+    '''
         pass
 
     def goto_screen(self): 
@@ -38,23 +68,41 @@ class telescope(object):
     
     ======
     Comments and desired actions:
-    - Error out if the dome safety interlock are not OK (i.e. people on telescope platform)
+    - Check dome safety interlock:
+        - if interlock is engaged, do not move the telescope. Return error message (assume people are inside dome)
+    - run status (LVMI_interface) to check instrument status
+        - if not idle (i.e. carrying out any observations or calibrations), repeat status command regularly until it returns idle, 
+          then move telescope. Regularly give updates (i.e. "waiting for instrument to become idle before moving telescope")
     '''
         pass
 
-    # pointing offset: change track rates
+    
     def offset(self, target=None, delta_ra=None, delta_dec=None, delta_x=None, delta_y=None, offset_gbox=False):
+    '''
+    Pointing offset: change track rates
+    
+    ======
+    Comments and desired actions:
+    '''
         pass
     
-    # guiding offset: do NOT change track rates
+   
     def guide_offset(self, target=None, delta_ra=None, delta_dec=None, delta_x=None, delta_y=None):
+    '''
+    Guiding offset: do NOT change track rates
+    
+    ======
+    Comments and desired actions:
+    '''
         pass
     
-    # change guider set points
     def offset_gbox(self, delta_x=None, delta_y=None, delta_pa=None):
     '''
     move the guider set points by specified amount; used to move accurate
     offsets by letting the guider do the work. used, e.g., for dithering.
+
+    ======
+    Comments and desired actions:
     '''
         pass
     
@@ -71,6 +119,10 @@ class telescope(object):
         pass
 
     def autofocus(self):
+    '''
+    Carry out autofocus routine
+    
+    '''
         pass
     
     def focusoffset(self, delta_f=None):
@@ -102,6 +154,9 @@ class telescope(object):
         pass
 
     def track_off(self):
+    '''
+    Turn off tracking.
+    '''
         pass
 
     def guide_on(self, guide_parameters=None):
@@ -113,6 +168,9 @@ class telescope(object):
         pass
 
     def guide_off(self):
+    '''
+    Turn off guiding, revert to tracking (track_on).
+    '''
         pass
 
     def zero_coordinates(self):
