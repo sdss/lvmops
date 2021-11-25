@@ -20,17 +20,29 @@ def ldls(object):
     
     ======
     Comments and desired actions:    
-    - should regularly run time_on command once lamps are on to ensure they haven't been left on for too long. 
-    - Send error message to SDSS observer(?) if time_on exceeds a predetermined limit. This step will prevent 
-    lamps being left on during observations, extend the lifetime of lamps, and prevent overheating of lamps 
-    and surrounding components.
-    - should we check if the dome is open when running this command? If open,error out or request confirmation to turn on lamps
+    - check dome safety interlock
+        - if engaged, do not turn on lights. Return error message
+    - once lights are on, regularly run time_on command once lamps are on to ensure they haven't been left on for too long. 
+        - give warning if they have been on for a set time (time TBD, depends on how quickly they would overheat or 
+          leak heat into enclosure/instrument. this step also prevents the lamps being left on accidentally)
+        - after another set time, check status in lvmi_interface, and if idle, turn off lamps 
+    - Run status (enclosure_interface) to check status of dome
+        - if open, do not turn on dome lights. Return error message
+    - Run status (lvmi_interface) to check status of instrument
+        - if not idle (i.e. exposing a dark image), repeat command until it returns idle
+        - if idle, turn on lamps
     '''
         pass
 
     def off(self):
     '''
     Turn ldls lamps off
+    
+    ======
+    Comments and desired actions:    
+    - Run status (lvmi_interface) to check status of instrument
+        - if not idle (i.e. exposing), repeat command until it returns idle
+        - if idle, turn off lamps
     '''
         pass
 
@@ -65,17 +77,29 @@ def penray(object):
     
     ======
     Comments and desired actions:    
-    - Should regularly run time_on command once lamps are on to ensure they haven't been left on for too long. 
-    - Send error message to SDSS observer(?) if time_on exceeds a predetermined limit. This step will prevent 
-    lamps being left on during observations, extend the lifetime of lamps, and prevent overheating of lamps 
-    and surrounding components.
-    - Should we check if the dome is open when running this command? If open, error out or request confirmation to turn on lamps
+    - check dome safety interlock
+        - if engaged, do not turn on lights. Return error message
+    - once lights are on, regularly run time_on command once lamps are on to ensure they haven't been left on for too long. 
+        - give warning if they have been on for a set time (time TBD, depends on how quickly they would overheat or 
+          leak heat into enclosure/instrument. this step also prevents the lamps being left on accidentally)
+        - after another set time, check status in lvmi_interface, and if idle, turn off lamps 
+    - Run status (enclosure_interface) to check status of dome
+        - if open, do not turn on dome lights. Return error message
+    - Run status (lvmi_interface) to check status of instrument
+        - if not idle (i.e. exposing a dark image), repeat command until it returns idle
+        - if idle, turn on lamps
     '''
         pass
 
     def off(self):
     '''
     Turn penray lamps off
+
+    ======
+    Comments and desired actions:    
+    - Run status (lvmi_interface) to check status of instrument
+        - if not idle (i.e. exposing), repeat command until it returns idle
+        - if idle, turn off lamps
     '''
         pass
 
