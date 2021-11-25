@@ -12,9 +12,13 @@ class lvmi(object):
     ======
     Comments and desired actions:    
     - Ping all relevant servers and check connectivity (scheduler, data storage, weather, www, etc)
-    - Home all telescopes and motors. Set everything to a predetermined status.
     - Verify all hardware is responsive and in a defined state.
     - Verify all calibration lamps are off
+      - if lamps are on, turn them off
+    - Check if telescopes and motors are homes
+        - if telescopes not parked, check dome safety interlock
+        - if interlog engaged, return error message
+        - if interloc not engaged, home all telescopes and motors. Set everything to a predetermined status.
     '''
       pass
 
